@@ -3,6 +3,7 @@ function Snake (x, y) {
   this.coords = [{x: x, y: y}]
   this.direction = null
   this.isEating = false
+  this.isDead = false
 
   this.draw = function() {
     this.coords.forEach(function(cellCoord) {
@@ -73,7 +74,18 @@ function Snake (x, y) {
     self.updateCoords()
     self.erase()
     self.draw()
+    self.checkOverlap()
   }
+
+  this.checkOverlap = function() {
+    var snakeHead = this.coords[0]
+    for(let i = 1; i < this.coords.length; i++) {
+      if(snakeHead.x === this.coords[i].x && snakeHead.y === this.coords[i].y) {
+        this.isDead = true
+      }
+    }
+  }
+
 }
 
 export { Snake }

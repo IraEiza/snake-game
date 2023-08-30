@@ -26,5 +26,13 @@ window.addEventListener('keydown', function(e) {
 })
 
 // Game loop
-var timerId = setInterval(snake.move, 400)
+var timerId = setInterval(gameLoop, 400)
+
+function gameLoop() {
+  snake.move()
+  if(snake.x === food.x && snake.y === food.y) {
+    console.log('ÑAM ÑAM!')
+    food.erase()
+  }
+}
 

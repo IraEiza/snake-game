@@ -5,8 +5,8 @@ import { Food } from "./food.js"
 
 var eatingSound = new Audio("./assets/music/eating.wav")
 var music = new Audio("./assets/music/background-music.mp3")
-music.volume = 0.5
-// music.play()
+music.volume = 0.3
+//music.play()
 
 // Elementos del juego
 var food = new Food(10, 3)

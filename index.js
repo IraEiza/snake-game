@@ -32,7 +32,7 @@ function gameLoop() {
   snake.move()
   if(snake.x === food.x && snake.y === food.y) {
     console.log('ÑAM ÑAM!')
-    food.erase()
+    food.respawn()
   }
 }
 

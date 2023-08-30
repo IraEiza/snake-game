@@ -30,7 +30,9 @@ var timerId = setInterval(gameLoop, 400)
 
 function gameLoop() {
   snake.move()
-  if(snake.x === food.x && snake.y === food.y) {
+  var snakeHead = snake.coords[0]
+  if(snakeHead.x === food.x && snakeHead.y === food.y) {
+    snake.isEating = true
     console.log('ÑAM ÑAM!')
     food.respawn()
   }

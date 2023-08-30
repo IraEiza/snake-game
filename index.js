@@ -1,4 +1,5 @@
 function Snake (x, y) {
+  var self = this
   this.x = x
   this.y = y
   this.direction = null
@@ -47,9 +48,9 @@ function Snake (x, y) {
   }
 
   this.move = function() {
-    this.updateCoords()
-    this.erase()
-    this.draw()
+    self.updateCoords()
+    self.erase()
+    self.draw()
   }
 }
 
@@ -73,6 +74,7 @@ window.addEventListener('keydown', function(e) {
     snake.direction = 'right'
     break
   }
-  snake.move()
 })
+
+var timerId = setInterval(snake.move, 400)
 

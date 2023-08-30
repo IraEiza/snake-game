@@ -11,16 +11,32 @@ function Snake (x, y) {
   this.updateCoords = function() {
     switch(this.direction) {
       case 'up' :
-        this.y--
+        if(this.y === 1) {
+          this.y = 20
+        } else {
+          this.y--
+        }
         break
       case 'left' :
-        this.x--
+        if(this.x === 1) {
+          this.x = 20
+        } else {
+          this.x--
+        }
         break
       case 'down' :
-        this.y++
+        if(this.y === 20) {
+          this.y = 1
+        } else {
+          this.y++
+        }
         break
       case 'right' :
-        this.x++
+        if(this.x === 20) {
+          this.x = 1
+        } else {
+          this.x++
+        }
       break
     }
   }
@@ -57,7 +73,6 @@ window.addEventListener('keydown', function(e) {
     snake.direction = 'right'
     break
   }
-  console.log(snake.direction)
   snake.move()
 })
 
